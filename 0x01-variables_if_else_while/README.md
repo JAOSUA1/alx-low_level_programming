@@ -5,3 +5,4 @@ Last Digit readme
 4-Prints alphabets in lower case
 5-Print single numbers
 3-Print alphabets lowercase then uppercase
+2-Display all lowercase only
