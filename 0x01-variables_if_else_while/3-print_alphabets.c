@@ -10,6 +10,11 @@ for (ch = 'a' ; ch <= 'z' ; ch++)
 {
 putchar(ch);
 }
+char gh;
+for (gh = 'A' ; gh <= 'Z' ; gh++)
+{
+putchar(gh);
+}
 putchar('\n');
 return (0);
 }
