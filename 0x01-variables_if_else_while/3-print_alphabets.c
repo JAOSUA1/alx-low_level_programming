@@ -2,19 +2,22 @@
 /**
  * main - Entry point
  * Return: Always 0 (success)
+ * This program displays all lowercase alphabets
+ * followed by the uppercase alphabets then a new line
  */
 int main(void)
 {
-char ch;
-for (ch = 'a' ; ch <= 'z' ; ch++)
+	char ch;
+
+	for (ch = 'a' ; ch <= 'z' ; ch++)
 {
-putchar(ch);
+	putchar (ch);
 }
-char gh;
-for (gh = 'A' ; gh <= 'Z' ; gh++)
+	for (ch = 'A' ; ch <= 'Z' ; ch++)
 {
-putchar(gh);
+	putchar (ch);
 }
-putchar('\n');
-return (0);
+	putchar ('\n');
+	return (0);
 }
+

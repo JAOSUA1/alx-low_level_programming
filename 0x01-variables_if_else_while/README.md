@@ -4,4 +4,4 @@ Last Digit readme
 6-Display numbers
 4-Prints alphabets in lower case
 5-Print single numbers
-3-Print alphabets with no restriction
+3-Print alphabets lowercase then uppercase
