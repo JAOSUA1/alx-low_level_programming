@@ -7,3 +7,4 @@ Positive and negative readme
 2-Display all lowercase only
 1-Print last digit readme
 7-Tebahpla readme
+8-Display base 16 readme
