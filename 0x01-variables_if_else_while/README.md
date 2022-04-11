@@ -6,3 +6,4 @@ Last Digit readme
 5-Print single numbers
 3-Print alphabets lowercase then uppercase
 2-Display all lowercase only
+1-Print last digit readme
