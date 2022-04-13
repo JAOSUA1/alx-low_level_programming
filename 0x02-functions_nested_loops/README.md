@@ -1,4 +1,4 @@
 Functions Nested Loops readme
 0. Print lowercase alphabets readme
-Print lowercase alphabets x10 readme
-Check lowercase alphabets readme
+2. Print lowercase alphabets x10 readme
+3. Check lowercase alphabets readme
