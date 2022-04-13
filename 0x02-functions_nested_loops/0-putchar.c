@@ -15,4 +15,5 @@ int main(void)
 	_putchar('t');
 
 	_putchar('\n');
+	return (0);
 }
