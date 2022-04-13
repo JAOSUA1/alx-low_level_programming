@@ -1,16 +1,15 @@
 #include "main.h"
 /**
- * main - Entry point
- * print_alphabet - Prints the alphabet in lowercase.
- * Return: Always 0 (Success)
+ * print_alphabet - function to print alphabet
+ * Return: no return
  */
 int main(void)
 {
 int i;
 for (i = 97; i <= 122; i++)
 {
-_putchar(i);
+_putchar (i);
 }
-_putchar('\n');
+_putchar ('\n');
 return (0);
 }
