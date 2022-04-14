@@ -1,17 +1,27 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_to_98 - Prints natural numbers up to 98 that are
- * @n: The number to begin the list
+ * print_to_98 - Prints all natural numbers
+ * from n to 98.
+ * @n: input number.
  *
- * Return: Always 0.
+ * Return: no return.
  */
 void print_to_98(int n)
 {
-for (n <= 98; n++)
+if (n > 98)
 {
-_putchar (n',');
+for (; n > 98; n--)
+{
+printf("%d, ", n);
 }
-_putchar ('\n');
-return (0);
+}
+else if (n < 98)
+{
+for (; n < 98; n++)
+{
+printf("%d, ", n);
+}
+}
+printf("%d\n", n);
 }
