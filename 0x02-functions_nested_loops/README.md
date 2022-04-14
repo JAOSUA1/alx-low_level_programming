@@ -4,3 +4,5 @@ Functions Nested Loops readme
 3. Check lowercase alphabets readme
 4. Check for alphabets readme
 5. Sign readme
+6. Compute absolute value readme
+7. Print last digit
