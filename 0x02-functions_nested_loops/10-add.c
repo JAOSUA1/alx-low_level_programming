@@ -7,7 +7,7 @@
  *
  * Return: Always result on success
  */
-int add(int g, int h);
+int add(int g, int h)
 {
 	return (g + h);
 }
