@@ -1,18 +1,18 @@
-#innclude "main.h"
+#include "main.h"
 /**
- * _isupper - check for uppecase alphabets
- * @c: which is the input character to check
+ * _isupper - checks if parameter is an uppercase character.
+ * @c: input character.
  *
- * Return: 1 at suiccess and 0 otherwise
+ * Return: 1 if is an uppercase character, 0 in other case.
  */
 int _isupper(int c)
 {
-	for (c >= 65 && c <= 90)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+if (c >= 65 && c <= 90)
+{
+return (1);
+}
+else
+{
+return (0);
+}
 }
