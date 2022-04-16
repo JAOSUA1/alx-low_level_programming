@@ -8,3 +8,4 @@ Print numbers from 0 to 14 ten times readme
 Print a straight line readme
 Going diagonal readme
 It is a square readme
+Triangle all the way readme
