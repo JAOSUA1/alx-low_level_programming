@@ -9,3 +9,4 @@ Print a straight line readme
 Going diagonal readme
 It is a square readme
 Triangle all the way readme
+Prime factor calculator readme
