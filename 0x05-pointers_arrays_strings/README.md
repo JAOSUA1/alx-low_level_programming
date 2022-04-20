@@ -5,3 +5,4 @@ Length of string counter readme
 Print strings readme
 Reverse strings readme
 Revesre it readme
+Print characters of a strings readme
