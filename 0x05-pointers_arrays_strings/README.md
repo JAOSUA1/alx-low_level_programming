@@ -7,3 +7,4 @@ Reverse strings readme
 Revesre it readme
 Print characters of a strings readme
 Halfway print readme
+Print array readme
