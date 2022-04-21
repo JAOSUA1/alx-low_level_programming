@@ -27,5 +27,5 @@ for (i = count - size; i < count; i++)
 p = p + ((*(s + i) - 48) * k);
 k /= 10;
 }
-return (p * q);
+return (p *q);
 }
