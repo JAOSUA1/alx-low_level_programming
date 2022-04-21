@@ -9,3 +9,4 @@ Print characters of a strings readme
 Halfway print readme
 Print array readme
 Pointer src readme
+Atoi readme
