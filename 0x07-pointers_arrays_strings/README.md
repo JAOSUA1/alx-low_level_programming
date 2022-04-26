@@ -6,3 +6,4 @@ Length of string readme
 Search strings readme
 Locating substring readme
 Chessboard readme
+Sum of matrix diagonals readme
