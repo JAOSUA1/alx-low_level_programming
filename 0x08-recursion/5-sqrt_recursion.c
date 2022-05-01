@@ -11,6 +11,8 @@ int _sqrt_recursion(int n)
 {
 	int r;
 
+	for (r >= 1, r++)
+
 	if (r % (n / r) == 0)
 	{
 		if (r * (n / r) == n)
