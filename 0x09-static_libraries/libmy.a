@@ -1,4 +1,5 @@
 #!bin/bash
-gcc -c -Wall -Werro -Wextra *.c
+gcc -c *.c
 ar -rc libmy.a *.o
 ranlib libmy.a
+
