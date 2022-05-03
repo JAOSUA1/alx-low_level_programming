@@ -14,7 +14,7 @@ int main(int argc, char *argv)
 
 	for (z = 0; z < argc; z++)
 	{
-		printf("argv[%d] is %s\n", argv[z]);
+		printf("argv[%d] is %s\n",z, argv[z]);
 	}
 	return (0);
 }
