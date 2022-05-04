@@ -13,6 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int cents, ncoins = 0;
+
 	if (argc == 1 || argc > 2)
 	{
 		printf("Error\n");
@@ -32,7 +33,7 @@ int main(int argc, char *argv[])
 		else if (cents >= 1)
 			cents -= 1;
 
-		ncoins += 1;
+		ncoins += cents;
 	}
 	printf("%d\n", ncoins);
 	return (0);
