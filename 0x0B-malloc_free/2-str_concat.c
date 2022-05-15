@@ -6,14 +6,15 @@
  * @s1: first string.
  * @s2: second string.
  *
- * Return: pointer of an array of chars
+ * Return: pointer of an array of chars and
+ * mull on failure
  */
 
 char *str_concat(char *s1, char *s2)
 
 {
 	char *strout;
-	unsigned int i, j, k, limit;
+	unsigned int x, y, z, limit;
 
 	if (s1 == NULL)
 		s1 = "";
