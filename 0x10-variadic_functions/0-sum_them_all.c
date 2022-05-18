@@ -19,8 +19,8 @@ int sum_them_all(const unsigned int n, ...)
 	va_start(valist, n);
 
 	for (a = 0; a < n; a++)
-		sum = sum + va_arg(valist, int);
+		sum += va_arg(valist, n);
 	va_end(valist);
-	_putchar('\n');
+	_putchar("\n");
 	return (sum);
 }
