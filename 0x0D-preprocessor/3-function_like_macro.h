@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define ABS(x) ((x) < (0) ? ((x) * (-1)) :(x))
+#define ABS(x) ((x) < (0) ? ((x) * (-1)) : (x))
 
 /**
  * 3-function_like_macro - calculates the absolute value of x
