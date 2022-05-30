@@ -1,2 +1,2 @@
 BIT MANIPULATION readme
-Binary to unit readme
+Binary to unsigned integer readme
