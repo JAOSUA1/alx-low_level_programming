@@ -47,7 +47,6 @@ void print_addr(char *ptr)
 	}
 	printf("\n");
 }
-
 /**
  * print_type - prints type
  * @ptr: magic.
@@ -62,7 +61,7 @@ void print_type(char *ptr)
 		type = ptr[16];
 	else
 		type = ptr[17];
-		printf("  Type:                              ");
+	printf("  Type:                              ");
 	if (type == 0)
 		printf("NONE (No file type)\n");
 	else if (type == 1)
@@ -76,7 +75,6 @@ void print_type(char *ptr)
 	else
 		printf("<unknown: %x>\n", type);
 }
-
 /**
  * print_osabi - prints osabi
  * @ptr: magic.
@@ -96,9 +94,8 @@ void print_osabi(char *ptr)
 		printf("UNIX - Solaris\n");
 	else
 		printf("<unknown: %x>\n", osabi);
-		printf("  ABI Version:                       %d\n", ptr[8]);
+	printf("  ABI Version:                       %d\n", ptr[8]);
 }
-
 /**
  * print_version - prints version
  * @ptr: magic.
@@ -112,9 +109,8 @@ void print_version(char *ptr)
 	printf("  Version:                           %d", version);
 	if (version == EV_CURRENT)
 		printf(" (current)");
-		printf("\n");
+	printf("\n");
 }
-
 /**
  * print_data - prints data
  * @ptr: magic.
@@ -131,7 +127,6 @@ void print_data(char *ptr)
 	if (data == 2)
 		printf(", big endian\n");
 }
-
 /**
  * print_magic - prints magic info.
  * @ptr: magic.
@@ -145,9 +140,8 @@ void print_magic(char *ptr)
 	printf("  Magic:  ");
 	for (bytes = 0; bytes < 16; bytes++)
 		printf(" %02x", ptr[bytes]);
-		printf("\n");
+	printf("\n");
 }
-
 /**
  * check_sys - check the version system.
  * @ptr: magic.
@@ -172,7 +166,6 @@ void check_sys(char *ptr)
 	print_type(ptr);
 	print_addr(ptr);
 }
-
 /**
  * check_elf - check if it is an elf file.
  * @ptr: magic.
@@ -190,7 +183,6 @@ int check_elf(char *ptr)
 		return (1);
 	return (0);
 }
-
 /**
  * main - check the code for Holberton School students.
  * @argc: number of arguments.
