@@ -1,6 +1,10 @@
 #ifndef LISTD
 #define LISTD
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -11,6 +15,7 @@
  * of my ALX task
  */
 typedef struct list_s
+
 {
 	char *str;
 	unsigned int len;
