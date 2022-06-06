@@ -1,7 +1,7 @@
 #include <sys/types.h>
-#include <stdio.h>
-#include <sys/stat.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+#include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <elf.h>
@@ -12,20 +12,19 @@
  *
  * Return: no return.
  */
-
 void print_addr(char *ptr)
 {
 	int c;
-	int in;
+	int ox;
 	char sys;
 
 	printf("  Entry point address:               0x");
 	sys = ptr[4] + '0';
 	if (sys == '1')
 	{
-		in = 26;
+		ox = 26;
 		printf("80");
-		for (c = in; c >= 22; c--)
+		for (c = ox; c >= 22; c--)
 		{
 			if (ptr[c] > 0)
 				printf("%x", ptr[c]);
@@ -37,8 +36,8 @@ void print_addr(char *ptr)
 	}
 	if (sys == '2')
 	{
-		in = 26;
-		for (c = in; c > 23; c--)
+		ox = 26;
+		for (c = ox; c > 23; c--)
 		{
 			if (ptr[c] >= 0)
 				printf("%02x", ptr[c]);
@@ -55,7 +54,6 @@ void print_addr(char *ptr)
  *
  * Return: no return.
  */
-
 void print_type(char *ptr)
 {
 	char type = ptr[16];
@@ -107,7 +105,6 @@ void print_osabi(char *ptr)
  *
  * Return: no return.
  */
-
 void print_version(char *ptr)
 {
 	int version = ptr[6];
@@ -124,7 +121,6 @@ void print_version(char *ptr)
  *
  * Return: no return.
  */
-
 void print_data(char *ptr)
 {
 	char data = ptr[5];
@@ -142,7 +138,6 @@ void print_data(char *ptr)
  *
  * Return: no return.
  */
-
 void print_magic(char *ptr)
 {
 	int bytes;
@@ -159,24 +154,23 @@ void print_magic(char *ptr)
  *
  * Return: no return.
  */
-
 void check_sys(char *ptr)
 {
 	char sys = ptr[4] + '0';
 
 	if (sys == '0')
 		exit(98);
-		printf("ELF Header:\n");
-		print_magic(ptr);
+	printf("ELF Header:\n");
+	print_magic(ptr);
 	if (sys == '1')
 		printf("  Class:                             ELF32\n");
 	if (sys == '2')
 		printf("  Class:                             ELF64\n");
-		print_data(ptr);
-		print_version(ptr);
-		print_osabi(ptr);
-		print_type(ptr);
-		print_addr(ptr);
+	print_data(ptr);
+	print_version(ptr);
+	print_osabi(ptr);
+	print_type(ptr);
+	print_addr(ptr);
 }
 
 /**
@@ -185,7 +179,6 @@ void check_sys(char *ptr)
  *
  * Return: 1 if it is an elf file. 0 if not.
  */
-
 int check_elf(char *ptr)
 {
 	int addr = (int)ptr[0];
@@ -195,7 +188,6 @@ int check_elf(char *ptr)
 
 	if (addr == 127 && E == 'E' && L == 'L' && F == 'F')
 		return (1);
-
 	return (0);
 }
 
@@ -206,10 +198,9 @@ int check_elf(char *ptr)
  *
  * Return: Always 0.
  */
-
 int main(int argc, char *argv[])
 {
-	int fd, ret_read;
+	int f, ret_read;
 	char ptr[27];
 
 	if (argc != 2)
@@ -217,14 +208,14 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
 		exit(98);
 	}
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
+	f = open(argv[1], O_RDONLY);
+	if (f < 0)
 	{
 		dprintf(STDERR_FILENO, "Err: file can not be open\n");
 		exit(98);
 	}
-	lseek(fd, 0, SEEK_SET);
-	ret_read = read(fd, ptr, 27);
+	lseek(f, 0, SEEK_SET);
+	ret_read = read(f, ptr, 27);
 	if (ret_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Err: The file can not be read\n");
@@ -236,7 +227,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	check_sys(ptr);
-	close(fd);
-
+	close(f);
 	return (0);
 }
