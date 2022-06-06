@@ -10,23 +10,23 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int c;
-	int letters;
+	int f;
+	int letr;
 	int rwr;
 
 	if (!filename)
 		return (-1);
-	c = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
-	if (c == -1)
+	f = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (f == -1)
 		return (-1);
 	if (!text_content)
 		text_content = "";
 	for (letr = 0; text_content[letr]; letr++)
 		;
-	rwr = write(c, text_content, letr);
+	rwr = write(f, text_content, letr);
 	if (rwr == -1)
 		return (-1);
-	close(c);
+	close(f);
 
 	return (1);
 }
