@@ -31,7 +31,6 @@ void error_file(int file_from, int file_to, char *argv[])
  *
  * Return: Always 0.
  */
-
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, err_close;
@@ -51,10 +50,10 @@ int main(int argc, char *argv[])
 	{
 		nchars = read(file_from, buf, 1024);
 		if (nchars == -1)
-			error_file(-1, 0, argv);
-		rwr = write(file_to, buf, nchars);
+		error_file(-1, 0, argv);
+		nwr = write(file_to, buf, nchars);
 		if (nwr == -1)
-			error_file(0, -1, argv);
+		error_file(0, -1, argv);
 	}
 	err_close = close(file_from);
 	if (err_close == -1)
