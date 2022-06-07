@@ -1,1 +1,1 @@
-Printing of all elements of a list_t readme
+Printing of all elements of a listint readme
