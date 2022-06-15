@@ -36,6 +36,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t nnodes = 0;
 
 	listp_t *hptr, *new, *add;
+
 	hptr = NULL;
 
 	while (head != NULL)
