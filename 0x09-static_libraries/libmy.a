@@ -1,5 +1,2 @@
 #!bin/bash
-gcc -c *.c
-ar -rc libmy.a *.o
-ranlib libmy.a
-
+gcc -c -Wall -Werror -Wextra *.c
