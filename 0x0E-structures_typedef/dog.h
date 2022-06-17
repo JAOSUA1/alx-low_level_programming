@@ -1,14 +1,8 @@
 #ifndef DOG
 #define DOG
 
-/**
- * dog_t - typedef for struct dog
- */
-
-typedef struct dog dog_t(void)
-{
-
-};
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * struct dog - struct type named dog
@@ -21,14 +15,14 @@ typedef struct dog dog_t(void)
  * Return: no return
  */
 
-
-struct dog
+typedef struct dog
 {
 	char *name;
 	char *owner;
 	float age;
-};
+} dog_t;
 
+int main
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
