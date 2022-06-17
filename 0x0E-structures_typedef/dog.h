@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 /**
- * dog - struct type named dog
+ * struct dog: struct type named dog
  * @name: name of the dog in char
  * @age: Its age in float
  * @owner: the name of the dog owner in char
