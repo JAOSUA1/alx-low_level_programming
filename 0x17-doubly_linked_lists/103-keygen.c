@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 		0x723161513346655a, 0x6b756f494b646850 };
 
 	(void) argc;
-	
+
 	for (len = 0; argv[1][len]; len++)
 		;
 	/* ----------- f1 ----------- */
@@ -122,5 +122,6 @@ int main(int argc, char **argv)
 	keygen[6] = '\0';
 	for (ch = 0; keygen[ch]; ch++)
 		printf("%c", keygen[ch]);
+
 	return (0);
 }
