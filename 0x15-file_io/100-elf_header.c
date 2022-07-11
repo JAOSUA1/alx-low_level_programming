@@ -1,7 +1,7 @@
-#include <sys/types.h>
-#include <stdlib.h>
-#include <sys/stat.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <elf.h>
@@ -12,47 +12,50 @@
  *
  * Return: no return.
  */
+
 void print_addr(char *ptr)
 {
-	int c;
-	int ox;
+	int i;
+	int begin;
 	char sys;
 
 	printf("  Entry point address:               0x");
 	sys = ptr[4] + '0';
 	if (sys == '1')
 	{
-		ox = 26;
+		begin = 26;
 		printf("80");
-		for (c = ox; c >= 22; c--)
+		for (i = begin; i >= 22; i--)
 		{
-			if (ptr[c] > 0)
-				printf("%x", ptr[c]);
-			else if (ptr[c] < 0)
-				printf("%x", 256 + ptr[c]);
+			if (ptr[i] > 0)
+				printf("%x", ptr[i]);
+			else if (ptr[i] < 0)
+				printf("%x", 256 + ptr[i]);
 		}
 		if (ptr[7] == 6)
 			printf("00");
 	}
 	if (sys == '2')
 	{
-		ox = 26;
-		for (c = ox; c > 23; c--)
+		begin = 26;
+		for (i = begin; i > 23; i--)
 		{
-			if (ptr[c] >= 0)
-				printf("%02x", ptr[c]);
-			else if (ptr[c] < 0)
-				printf("%02x", 256 + ptr[c]);
+			if (ptr[i] >= 0)
+				printf("%02x", ptr[i]);
+			else if (ptr[i] < 0)
+				printf("%02x", 256 + ptr[i]);
 		}
 	}
 	printf("\n");
 }
+
 /**
  * print_type - prints type
  * @ptr: magic.
  *
  * Return: no return.
  */
+
 void print_type(char *ptr)
 {
 	char type = ptr[16];
@@ -75,12 +78,14 @@ void print_type(char *ptr)
 	else
 		printf("<unknown: %x>\n", type);
 }
+
 /**
  * print_osabi - prints osabi
  * @ptr: magic.
  *
  * Return: no return.
  */
+
 void print_osabi(char *ptr)
 {
 	char osabi = ptr[7];
@@ -96,6 +101,7 @@ void print_osabi(char *ptr)
 		printf("<unknown: %x>\n", osabi);
 	printf("  ABI Version:                       %d\n", ptr[8]);
 }
+
 /**
  * print_version - prints version
  * @ptr: magic.
@@ -111,6 +117,7 @@ void print_version(char *ptr)
 		printf(" (current)");
 	printf("\n");
 }
+
 /**
  * print_data - prints data
  * @ptr: magic.
@@ -127,6 +134,7 @@ void print_data(char *ptr)
 	if (data == 2)
 		printf(", big endian\n");
 }
+
 /**
  * print_magic - prints magic info.
  * @ptr: magic.
@@ -142,12 +150,14 @@ void print_magic(char *ptr)
 		printf(" %02x", ptr[bytes]);
 	printf("\n");
 }
+
 /**
  * check_sys - check the version system.
  * @ptr: magic.
  *
  * Return: no return.
  */
+
 void check_sys(char *ptr)
 {
 	char sys = ptr[4] + '0';
@@ -166,6 +176,7 @@ void check_sys(char *ptr)
 	print_type(ptr);
 	print_addr(ptr);
 }
+
 /**
  * check_elf - check if it is an elf file.
  * @ptr: magic.
@@ -183,6 +194,7 @@ int check_elf(char *ptr)
 		return (1);
 	return (0);
 }
+
 /**
  * main - check the code for Holberton School students.
  * @argc: number of arguments.
@@ -192,22 +204,22 @@ int check_elf(char *ptr)
  */
 int main(int argc, char *argv[])
 {
-	int f, ret_read;
+	int fd, ret_read;
 	char ptr[27];
 
 	if (argc != 2)
 	{
 		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
-		exit(98);
+			exit(98);
 	}
-	f = open(argv[1], O_RDONLY);
-	if (f < 0)
+	fd = open(argv[1], O_RDONLY);
+	if (fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Err: file can not be open\n");
 		exit(98);
 	}
-	lseek(f, 0, SEEK_SET);
-	ret_read = read(f, ptr, 27);
+	lseek(fd, 0, SEEK_SET);
+	ret_read = read(fd, ptr, 27);
 	if (ret_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Err: The file can not be read\n");
@@ -219,6 +231,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	check_sys(ptr);
-	close(f);
+	close(fd);
 	return (0);
-}
+
