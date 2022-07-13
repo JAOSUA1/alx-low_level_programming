@@ -1,3 +1,4 @@
+#!/bin/bash
 gcc -c *.c
 ar -rc libdynamic.so *.o
 ar -rcs libdynamic.so *.o
